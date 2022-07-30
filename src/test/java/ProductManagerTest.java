@@ -45,19 +45,6 @@ public class ProductManagerTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-    @Test
-    public void findProd() {
-        Book book1 = new Book(1, "Translate", 250, "New House", "Dr Martin");
-        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
-        Repository repo = new Repository();
-        ProductManager manager = new ProductManager(repo);
-        manager.add(book1);
-        manager.add(smartphone1);
-
-        Boolean expected = true;
-        Boolean actual = manager.matches(book1, "Translate");
-        Assertions.assertEquals(expected, actual);
-    }
 
     @Test
     public void findTwoProd() {
@@ -76,15 +63,90 @@ public class ProductManagerTest {
     }
 
     @Test
-    public void notFindProd() {
+    public void findNameBook() {
         Book book1 = new Book(1, "Translate", 250, "New House", "Dr Martin");
+        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
         Repository repo = new Repository();
         ProductManager manager = new ProductManager(repo);
         manager.add(book1);
+        manager.add(smartphone1);
 
-        Boolean expected = false;
-        Boolean actual = manager.matches(book1, "Novel");
+        Boolean expected = true;
+        Boolean actual = manager.matches(book1, "Translate");
         Assertions.assertEquals(expected, actual);
     }
+
+
+    @Test
+    public void findAuthorBook() {
+        Product book1 = new Book(1, "Translate", 250, "New House", "Dr Martin");
+        Product smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
+        Repository repo = new Repository();
+        ProductManager manager = new ProductManager(repo);
+        manager.add(book1);
+        manager.add(smartphone1);
+
+        Boolean expected = true;
+        Boolean actual = manager.matches(book1,"Dr Martin");
+        Assertions.assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void findNameSmartfone() {
+        Product book1 = new Book(1, "Translate", 250, "New House", "Dr Martin");
+        Product smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
+        Repository repo = new Repository();
+        ProductManager manager = new ProductManager(repo);
+        manager.add(book1);
+        manager.add(smartphone1);
+
+        Boolean expected = true;
+        Boolean actual = manager.matches(smartphone1,"Samsung");
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void findPerfomanceSmartfone() {
+        Product book1 = new Book(1, "Translate", 250, "New House", "Dr Martin");
+        Product smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
+        Repository repo = new Repository();
+        ProductManager manager = new ProductManager(repo);
+        manager.add(book1);
+        manager.add(smartphone1);
+
+        Boolean expected = true;
+        Boolean actual = manager.matches(smartphone1,"China");
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void notFindNameBook() {
+        Book book1 = new Book(1, "Translate", 250, "New House", "Dr Martin");
+        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
+        Repository repo = new Repository();
+        ProductManager manager = new ProductManager(repo);
+        manager.add(book1);
+        manager.add(smartphone1);
+
+        Boolean expected = false;
+        Boolean actual = manager.matches(book1,"PooL");
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void notFindNameSmartphone() {
+        Book book1 = new Book(1, "Translate", 250, "New House", "Dr Martin");
+        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
+        Repository repo = new Repository();
+        ProductManager manager = new ProductManager(repo);
+        manager.add(book1);
+        manager.add(smartphone1);
+
+        Boolean expected = false;
+        Boolean actual = manager.matches(smartphone1,"PooL");
+        Assertions.assertEquals(expected, actual);
+    }
+
+
+
 
 }
