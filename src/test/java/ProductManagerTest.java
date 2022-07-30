@@ -6,7 +6,7 @@ public class ProductManagerTest {
     @Test
     public void addProd() {
         Book book1 = new Book(1, "book", 250, "New House", "Dr Martin");
-        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", 12);
+        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
         Repository repo = new Repository();
         ProductManager manager = new ProductManager(repo);
         manager.add(book1);
@@ -20,7 +20,7 @@ public class ProductManagerTest {
     @Test
     public void findName() {
         Book book1 = new Book(1, "Translate", 250, "New House", "Dr Martin");
-        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", 12);
+        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
         Repository repo = new Repository();
         ProductManager manager = new ProductManager(repo);
         manager.add(book1);
@@ -34,7 +34,7 @@ public class ProductManagerTest {
     @Test
     public void notFindName() {
         Book book1 = new Book(1, "Translate", 250, "New House", "Dr Martin");
-        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", 12);
+        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
         Repository repo = new Repository();
         ProductManager manager = new ProductManager(repo);
         manager.add(book1);
@@ -48,7 +48,7 @@ public class ProductManagerTest {
     @Test
     public void findProd() {
         Book book1 = new Book(1, "Translate", 250, "New House", "Dr Martin");
-        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", 12);
+        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
         Repository repo = new Repository();
         ProductManager manager = new ProductManager(repo);
         manager.add(book1);
@@ -62,7 +62,7 @@ public class ProductManagerTest {
     @Test
     public void findTwoProd() {
         Book book1 = new Book(1, "Translate", 250, "New House", "Dr Martin");
-        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", 12);
+        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
         Book book2 = new Book(3, "Samsung", 150_500, "Guid for samsung", "Samsung Company");
         Repository repo = new Repository();
         ProductManager manager = new ProductManager(repo);

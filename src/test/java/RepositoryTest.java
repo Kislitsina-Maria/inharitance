@@ -6,7 +6,7 @@ public class RepositoryTest {
     @Test
     public void addFile() {
         Book book1 = new Book(1, "book", 250, "New House", "Dr Martin");
-        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", 12);
+        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
         Repository repo = new Repository();
         repo.addProduct(book1);
         repo.addProduct(smartphone1);
@@ -19,7 +19,7 @@ public class RepositoryTest {
     @Test
     public void deliteId() {
         Book book1 = new Book(1, "book", 250, "New House", "Dr Martin");
-        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", 12);
+        Smartphone smartphone1 = new Smartphone(2, "Samsung", 50_500, "Silver", "China");
         Repository repo = new Repository();
         repo.addProduct(book1);
         repo.addProduct(smartphone1);
